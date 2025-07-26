@@ -1,0 +1,19 @@
+{
+	"servers": {
+		"github": {
+			"type": "http",
+			"url": "https://api.githubcopilot.com/mcp/"
+			},
+		"ado": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@azure-devops/mcp@1.2.1",
+				"aifen"
+			]
+		},
+		
+	},
+	"inputs": []
+}

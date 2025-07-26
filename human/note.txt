@@ -1,0 +1,19 @@
+
+[Demo1]
+setup github mcp server
+show me demo10 repo in my github
+
+https://github.com/github/github-mcp-server
+
+create a new task for below details in above repo:
+Build a website for my lego robotics team
+
+[Demo2]
+figma:
+https://www.figma.com/design/eZQZjcT4yMO1UcXbttvNtI/AgenticSDLC--Copy-?node-id=0-1&p=f&t=VFbFa1ES0ZtGkMSx-0
+
+https://www.figma.com/design/eZQZjcT4yMO1UcXbttvNtI/AgenticSDLC--Copy-?node-id=1-629&t=VFbFa1ES0ZtGkMSx-4
+
+
+
+
