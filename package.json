@@ -31,9 +31,6 @@
       "react-app/jest"
     ]
   },
-  "devDependencies": {
-    "figma-developer-mcp": "^1.0.0"
-  },
   "browserslist": {
     "production": [
       ">0.2%",

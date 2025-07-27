@@ -19,3 +19,8 @@ npx figma-developer-mcp --figma-api-key=
 
 
 
+run bicep locally and deploy to azure
+
+  "devDependencies": {
+    "figma-developer-mcp": "^1.0.0"
+  },
