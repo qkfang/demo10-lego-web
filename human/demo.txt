@@ -5,12 +5,7 @@ a) add story for me to Build a website
 b) add initial details
 c) assign to ghc in gc.com
 
-Demo2- MCP Support (10min)
-a) work out a figma design
-b) add figma mcp service
-c) add custom instructions
-
-Demo3- Build Your own MCP (10min)
+Demo1- Build Your own MCP (10min)
 a) demo end result
 b) look at the code
 MCP Robotics
@@ -18,12 +13,17 @@ https://github.com/qkfang/lego-agent/tree/main/lego-mcp
 
 
 [Coding Agent]
+Demo2- MCP Support (10min)
+a) work out a figma design
+b) add figma mcp service
+c) add custom instructions
+
 Demo1- Build a website for my lego robotics team (10min)
 q1: the website should use react and only 3 pages: home, about, robotics.
 q2: add a backend api call to fetch a list of robot designs
 q3: create ci/cd and deploy to static website
 
-Demo2: SRE agent
+Demo3: SRE agent
 q1: but in api
 q2: failed error
 q3: create ticket/pr and redeploy

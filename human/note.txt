@@ -9,10 +9,12 @@ create a new task for below details in above repo:
 Build a website for my lego robotics team
 
 [Demo2]
-figma:
-https://www.figma.com/design/eZQZjcT4yMO1UcXbttvNtI/AgenticSDLC--Copy-?node-id=0-1&p=f&t=VFbFa1ES0ZtGkMSx-0
+buil a html based on
+figma: (no img)
 
-https://www.figma.com/design/eZQZjcT4yMO1UcXbttvNtI/AgenticSDLC--Copy-?node-id=1-629&t=VFbFa1ES0ZtGkMSx-4
+create a html page based on this design, https://www.figma.com/design/eZQZjcT4yMO1UcXbttvNtI/Lego-Website?node-id=1-629&t=pxHjQikalOmlaV8S-4, must include image
+
+npx figma-developer-mcp --figma-api-key=
 
 
 
