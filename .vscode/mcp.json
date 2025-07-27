@@ -3,7 +3,7 @@
 		"github": {
 			"type": "http",
 			"url": "https://api.githubcopilot.com/mcp/"
-			},
+		},
 		"ado": {
 			"type": "stdio",
 			"command": "npx",
@@ -13,7 +13,10 @@
 				"aifen"
 			]
 		},
-		
+		"figma": {
+			"url": "http://localhost:3333/sse",
+			"type": "http"
+		},
 	},
 	"inputs": []
 }
