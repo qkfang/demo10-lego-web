@@ -1,0 +1,21 @@
+
+[Demo1]
+setup github mcp server
+show me demo10 repo in my github
+
+https://github.com/github/github-mcp-server
+
+create a new task for below details in above repo:
+Build a website for my lego robotics team
+
+[Demo2]
+buil a html based on
+figma: (no img)
+
+create a html page based on this design, https://www.figma.com/design/eZQZjcT4yMO1UcXbttvNtI/Lego-Website?node-id=1-629&t=pxHjQikalOmlaV8S-4, must include image
+
+npx figma-developer-mcp --figma-api-key=
+
+
+
+

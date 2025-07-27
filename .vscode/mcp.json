@@ -1,0 +1,22 @@
+{
+	"servers": {
+		"github": {
+			"type": "http",
+			"url": "https://api.githubcopilot.com/mcp/"
+		},
+		"ado": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@azure-devops/mcp@1.2.1",
+				"aifen"
+			]
+		},
+		"figma": {
+			"url": "http://localhost:3333/sse",
+			"type": "http"
+		},
+	},
+	"inputs": []
+}
