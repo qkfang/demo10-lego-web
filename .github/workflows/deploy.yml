@@ -1,5 +1,5 @@
-# GitHub Action to deploy Azure Static Web App and Bicep infrastructure
-# This workflow deploys the Bicep template and then the React app to Azure Static Web Apps
+# GitHub Action to deploy Azure Static Web App
+# This workflow deploys the React app to Azure Static Web Apps
 
 name: Deploy to Azure Static Web App
 
@@ -10,30 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy-infra:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Azure Login
-        uses: azure/login@v2
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - name: Deploy Bicep
-        uses: azure/arm-deploy@v2
-        with:
-          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          resourceGroupName: ${{ secrets.AZURE_RESOURCE_GROUP }}
-          template: infra/staticwebapp.bicep
-          parameters: |
-            name=${{ secrets.AZURE_STATIC_WEBAPP_NAME }}
-            repositoryUrl=${{ github.repositoryUrl }}
-            branch=main
-
   build-and-deploy:
-    needs: deploy-infra
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -59,5 +36,5 @@ jobs:
           app_location: '/'
           output_location: 'build'
           skip_app_build: true
-          # The name must match the static web app created by the Bicep template
-          # If you use custom domains, set them up in Azure Portal
+          # Deploy to existing Azure Static Web App
+          # Make sure the azure_static_web_apps_api_token matches your Static Web App
