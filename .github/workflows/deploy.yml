@@ -1,0 +1,63 @@
+# GitHub Action to deploy Azure Static Web App and Bicep infrastructure
+# This workflow deploys the Bicep template and then the React app to Azure Static Web Apps
+
+name: Deploy to Azure Static Web App
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy-infra:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy Bicep
+        uses: azure/arm-deploy@v2
+        with:
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          resourceGroupName: ${{ secrets.AZURE_RESOURCE_GROUP }}
+          template: infra/staticwebapp.bicep
+          parameters: |
+            name=${{ secrets.AZURE_STATIC_WEBAPP_NAME }}
+            repositoryUrl=${{ github.repositoryUrl }}
+            branch=main
+
+  build-and-deploy:
+    needs: deploy-infra
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build app
+        run: npm run build
+
+      - name: Deploy to Azure Static Web Apps
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (commenting, PRs)
+          action: 'upload'
+          app_location: '/'
+          output_location: 'build'
+          skip_app_build: true
+          # The name must match the static web app created by the Bicep template
+          # If you use custom domains, set them up in Azure Portal
